@@ -1,0 +1,37 @@
+.extreme-page {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    min-height: 100vh;
+    color: white;
+}
+
+.extreme-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 40px;
+}
+
+.extreme-section {
+    padding: 30px;
+}
+
+.diamond-rain-visual {
+    height: 200px;
+    background: #0f2027;
+    background: linear-gradient(to bottom, #203a43, #2c5364);
+    border-radius: 15px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.diamond {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(200, 240, 255, 0.9);
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px white;
+}

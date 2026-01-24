@@ -1,0 +1,58 @@
+.stars-page {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stars-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.stars-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.galaxy-card {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    background: rgba(10, 10, 30, 0.4);
+}
+
+.galaxy-visual {
+    width: 200px;
+    height: 100px;
+    background: radial-gradient(ellipse at center, rgba(156, 39, 176, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    transform: rotate(-15deg);
+    box-shadow: 0 0 50px rgba(156, 39, 176, 0.4);
+    animation: galaxySpin 20s linear infinite;
+}
+
+@keyframes galaxySpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.stars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.star-type-card h3 {
+    color: #e0c3fc;
+    margin-bottom: 0.5rem;
+}

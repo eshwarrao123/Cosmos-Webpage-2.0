@@ -1,0 +1,36 @@
+.habitability-page {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    min-height: 100vh;
+    color: white;
+}
+
+.habitability-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 40px;
+}
+
+.habitability-section {
+    padding: 30px;
+}
+
+.zone-visual {
+    height: 150px;
+    background: linear-gradient(90deg, #ff4d4d 0%, #ff4d4d 20%, #4facfe 40%, #4facfe 60%, #4361ee 80%, #4361ee 100%);
+    border-radius: 15px;
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.zone-label {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,60 @@
+.solar-page {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solar-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.solar-header h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+}
+
+.solar-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sun-card {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.sun-visual {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #fdb813, #f57f17);
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 80px rgba(253, 184, 19, 0.6);
+    animation: sunPulse 4s infinite alternate;
+}
+
+@keyframes sunPulse {
+    from {
+        box-shadow: 0 0 60px rgba(253, 184, 19, 0.5);
+        transform: scale(1);
+    }
+
+    to {
+        box-shadow: 0 0 100px rgba(253, 184, 19, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+.belts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.belts-grid h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
