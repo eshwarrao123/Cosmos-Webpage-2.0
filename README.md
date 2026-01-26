@@ -1,8 +1,13 @@
 # 🌌 COSMOS - Interactive Space Explorer
+<br/>
 
-**COSMOS** is an immersive educational web application designed to bring the wonders of the solar system and astrophysics to your screen. Built with modern web technologies, it combines scientific data with stunning 3D visuals, real-time NASA integrations, and interactive physics simulations.
+**`PROJECT URL : `**  https://cosmos-by-eshwar007.netlify.app/
 
-![Cosmos Banner](/dist_assets/banner_placeholder.png) *(Note: Replace with actual screenshot)*
+---
+<br/>
+COSMOS is an immersive educational web application designed to bring the wonders of the solar system and astrophysics to your screen. Built with modern web technologies, it combines scientific data with stunning 3D visuals, real-time NASA integrations, and interactive physics simulations.
+
+
 
 ## 🚀 Features
 
