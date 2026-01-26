@@ -18,8 +18,24 @@ const StarsGalaxies = () => {
 
             <section className="section-block">
                 <GlassCard className="galaxy-card">
-                    <div className="galaxy-visual"></div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                        <motion.img
+                            src="/milkyway.png"
+                            alt="The Milky Way"
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                            style={{
+                                width: '300px',
+                                height: '300px',
+                                objectFit: 'cover',
+                                borderRadius: '50%',
+                                filter: 'drop-shadow(0 0 20px rgba(100,100,255,0.3))'
+                            }}
+                        />
+                    </div>
+                    <br />
                     <h2>The Milky Way</h2>
+                    <br />
                     <p>
                         Our home galaxy, a barred spiral galaxy containing 100–400 billion stars.
                         It is estimated to contain at least that many planets. The Solar System is located

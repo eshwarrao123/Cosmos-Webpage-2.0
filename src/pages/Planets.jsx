@@ -17,16 +17,15 @@ const Planets = () => {
                 The Planets
             </motion.h1>
             <div className="planets-grid">
-                {planetsData.map((planet, index) => (
+                {planetsData.filter(p => p.id !== 'sun' && p.id !== 'moon').map((planet, index) => (
                     <Link to={`/planets/${planet.id}`} key={planet.id} style={{ textDecoration: 'none' }}>
                         <GlassCard delay={index * 0.1} className="planet-card">
                             <div className="planet-visual-container">
-                                <div
-                                    className="planet-visual"
-                                    style={{ background: planet.color }}
-                                >
-                                    {planet.hasRings && <div className="planet-rings"></div>}
-                                </div>
+                                <img
+                                    src={planet.image}
+                                    alt={planet.name}
+                                    className="planet-visual-img"
+                                />
                             </div>
                             <h2>{planet.name}</h2>
                             <p className="planet-desc">{planet.description}</p>

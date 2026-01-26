@@ -18,8 +18,17 @@ const SolarSystem = () => {
 
             <div className="solar-content">
                 <GlassCard className="sun-card">
-                    <div className="sun-visual"></div>
+                    <div style={{ maxWidth: '1000px', width: '100%', margin: '0 auto 20px', height: '500px' }}>
+                        <iframe
+                            src="https://eyes.nasa.gov/apps/solar-system/#/home?embed=true"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 'none', borderRadius: '12px', background: '#000' }}
+                            title="NASA Eyes Solar System"
+                        />
+                    </div>
                     <h2>The Sun</h2>
+                    <br />
                     <p>
                         The star at the center of our Solar System. It is a nearly perfect sphere of hot plasma,
                         heated to incandescence by nuclear fusion reactions in its core.

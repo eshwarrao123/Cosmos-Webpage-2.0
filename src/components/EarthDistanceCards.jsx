@@ -9,7 +9,7 @@ const REF_SPEED = 17; // km/s (Voyager/Modern Probe)
 
 const EarthDistanceCards = () => {
     const earth = planetsData.find(p => p.id === 'earth');
-    const others = planetsData.filter(p => p.id !== 'earth');
+    const others = planetsData.filter(p => p.id !== 'earth' && p.id !== 'moon' && p.id !== 'sun');
 
     return (
         <div className="earth-distances-container">
@@ -18,10 +18,18 @@ const EarthDistanceCards = () => {
 
             <div className="earth-grid">
                 {others.map((planet, index) => {
-                    const dist1 = earth.details.physical.distanceFromSun;
-                    const dist2 = planet.details.physical.distanceFromSun;
-                    const diffAU = Math.abs(dist1 - dist2);
-                    const diffKm = diffAU * AU_IN_KM;
+                    let diffAU, diffKm;
+
+                    if (planet.id === 'moon') {
+                        diffKm = 384400;
+                        diffAU = diffKm / AU_IN_KM;
+                    } else {
+                        const dist1 = earth.details.physical.distanceFromSun;
+                        const dist2 = planet.details.physical.distanceFromSun;
+                        diffAU = Math.abs(dist1 - dist2);
+                        diffKm = diffAU * AU_IN_KM;
+                    }
+
                     const days = (diffKm / REF_SPEED) / (24 * 3600);
                     const years = days / 365.25;
 

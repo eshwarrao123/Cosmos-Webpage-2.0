@@ -32,8 +32,20 @@ const DistanceCalculator = () => {
         const dist1 = fromPlanet.details.physical.distanceFromSun || 0;
         const dist2 = toPlanet.details.physical.distanceFromSun || 0;
 
-        const diffAU = Math.abs(dist1 - dist2);
-        const diffKm = diffAU * AU_IN_KM;
+        let diffAU;
+        let diffKm;
+
+        // Special handling for Earth <-> Moon
+        const isEarthMoon = (fromPlanet.id === 'earth' && toPlanet.id === 'moon') ||
+            (fromPlanet.id === 'moon' && toPlanet.id === 'earth');
+
+        if (isEarthMoon) {
+            diffKm = 384400; // Average distance in km
+            diffAU = diffKm / AU_IN_KM;
+        } else {
+            diffAU = Math.abs(dist1 - dist2);
+            diffKm = diffAU * AU_IN_KM;
+        }
 
         // Time = Distance / Speed
         const timeSeconds = diffKm / selectedSpeed;
@@ -43,13 +55,15 @@ const DistanceCalculator = () => {
         const timeYears = timeDays / 365.25;
 
         return {
-            au: diffAU.toFixed(2),
-            km: (diffKm / 1000000).toFixed(1), // Millions of km
+            au: diffAU.toFixed(5), // More precision for moon
+            km: (diffKm / 1000000).toFixed(3), // Millions of km
             seconds: Math.round(timeSeconds),
             minutes: timeMinutes.toFixed(1),
             hours: timeHours.toFixed(1),
             days: Math.round(timeDays).toLocaleString(),
-            years: timeYears.toFixed(2)
+            years: timeYears.toFixed(2),
+            originDist: dist1,
+            destDist: dist2
         };
     }, [fromPlanet, toPlanet, selectedSpeed]);
 
@@ -69,8 +83,8 @@ const DistanceCalculator = () => {
                         onChange={(e) => setFromPlanetId(e.target.value)}
                         className="planet-select"
                     >
-                        {planetsData.map(p => (
-                            <option key={p.id} value={p.id}>{p.name}</option>
+                        {planetsData.filter(p => p.id !== 'moon').map(p => (
+                            <option key={p.id} value={p.id}>{p.name} ({p.details.physical.distanceFromSun} AU)</option>
                         ))}
                     </select>
                 </div>
@@ -83,7 +97,7 @@ const DistanceCalculator = () => {
                         className="planet-select"
                     >
                         {planetsData.map(p => (
-                            <option key={p.id} value={p.id}>{p.name}</option>
+                            <option key={p.id} value={p.id}>{p.name} ({p.details.physical.distanceFromSun} AU)</option>
                         ))}
                     </select>
                 </div>
@@ -129,7 +143,8 @@ const DistanceCalculator = () => {
                                 {Number(calculations.years) >= 1 && `${calculations.years} Years`}
                                 {Number(calculations.years) < 1 && Number(calculations.days) >= 1 && `${calculations.days} Days`}
                                 {Number(calculations.days) < 1 && Number(calculations.hours) >= 1 && `${calculations.hours} Hours`}
-                                {Number(calculations.hours) < 1 && `${calculations.minutes} Minutes`}
+                                {Number(calculations.hours) < 1 && Number(calculations.minutes) >= 1 && `${calculations.minutes} Minutes`}
+                                {Number(calculations.minutes) < 1 && `${calculations.seconds} Seconds`}
                             </div>
                         </div>
 

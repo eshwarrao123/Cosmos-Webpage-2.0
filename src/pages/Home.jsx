@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import GlassCard from '../components/GlassCard';
 import './Home.css';
-import homeBg from '../assets/image.png';
+import homeBg from '../assets/imageback.webp';
 
 const Home = () => {
     const navigate = useNavigate();

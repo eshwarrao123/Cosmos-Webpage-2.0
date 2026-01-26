@@ -89,17 +89,39 @@ const PlanetDetail = () => {
                 </div>
 
                 {show3D ? (
-                    <div style={{ maxWidth: '600px', margin: '0 auto 20px' }}>
-                        <Planet3D color={planet.color3D} ringConfig={planet.ringSystem} />
+                    <div style={{ maxWidth: '800px', width: '100%', margin: '0 auto 20px', height: '500px' }}>
+                        {planetId === 'earth' ? (
+                            <iframe
+                                src="https://eyes.nasa.gov/apps/earth/?embed=true"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 'none', borderRadius: '12px', background: '#000' }}
+                                title="NASA Eyes Earth"
+                            />
+                        ) : planetId === 'mars' ? (
+                            <iframe
+                                src="https://eyes.nasa.gov/apps/solar-system/#/mars?embed=true"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 'none', borderRadius: '12px', background: '#000' }}
+                                title="NASA Eyes Mars"
+                                allowFullScreen
+                            />
+                        ) : (
+                            <Planet3D color={planet.color3D} ringConfig={planet.ringSystem} />
+                        )}
                     </div>
                 ) : (
-                    <div
+                    <img
+                        src={planet.image}
+                        alt={planet.name}
                         className="planet-detail-hero"
-                        style={{ background: planet.color }}
-                    ></div>
+                        style={{ objectFit: 'cover' }}
+                    />
                 )}
 
                 <h1>{planet.name}</h1>
+                <br />
                 <p style={{ maxWidth: '600px', margin: '0 auto', opacity: 0.8 }}>{planet.description}</p>
             </motion.div>
 

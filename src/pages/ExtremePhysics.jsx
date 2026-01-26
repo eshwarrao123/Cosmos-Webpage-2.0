@@ -35,7 +35,7 @@ const ExtremePhysics = () => {
                             <motion.div
                                 key={d.id}
                                 className="diamond"
-                                style={{ left: d.left, top: -20 }}
+                                style={{ left: d.left, top: '-20px' }}
                                 animate={{ top: '120%' }}
                                 transition={{ duration: d.duration, repeat: Infinity, ease: "linear", delay: d.delay }}
                             />
@@ -50,6 +50,9 @@ const ExtremePhysics = () => {
                         Inside Jupiter and Saturn, pressures are so high that hydrogen gas is squeezed until it becomes a liquid metal. This metallic hydrogen conducts electricity and generates the planets' massive magnetic fields.
                     </p>
                 </GlassCard>
+
+
+
             </div>
         </div>
     );

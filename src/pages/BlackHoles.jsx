@@ -6,15 +6,46 @@ import './BlackHoles.css';
 const BlackHoles = () => {
     return (
         <div className="blackhole-page">
-            <div className="blackhole-hero">
+
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                margin: '20px 0',
+                position: 'relative',
+                width: '300px',
+                height: '300px',
+            }}>
+                {/* Rotating Ring/Glow */}
                 <motion.div
-                    className="blackhole-visual"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 2, ease: "easeOut" }}
-                ></motion.div>
-                <div className="accretion-disk"></div>
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    style={{
+                        position: 'absolute',
+                        inset: 0, // Make it slightly larger
+                        borderRadius: '50%',
+                        background: 'conic-gradient(from 0deg, transparent 0%, rgba(61, 50, 50, 0.1) 50%, transparent 100%)',
+                        boxShadow: '0 0 50px rgba(15, 15, 99, 0.2)', // Subtle blueish glow
+                        mixBlendMode: 'screen'
+                    }}
+                />
+
+                {/* Static Black Hole Image */}
+                <img
+                    src="/blackhole.png"
+                    alt="Black Hole"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius: '50%',
+                        position: 'relative',
+                        zIndex: 2,
+                        boxShadow: '0 0 50px rgba(15, 15, 99, 0.8)' // Deep shadow
+                    }}
+                />
             </div>
+
+
 
             <motion.div
                 className="content-container"

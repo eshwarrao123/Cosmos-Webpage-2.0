@@ -96,3 +96,9 @@
     color: #00bcd4;
     border: 1px solid rgba(0, 188, 212, 0.2);
 }
+
+.planet-visual-img {
+    height: 28vh;
+    width: 100%;
+    object-fit: cover;
+}

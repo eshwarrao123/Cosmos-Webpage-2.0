@@ -27,30 +27,43 @@ const OrbitalMechanics = () => {
                     </ul>
                     <div className="orbit-visual">
                         <div className="sun"></div>
-                        <motion.div
-                            className="orbit-path"
-                            style={{ width: '200px', height: '140px' }} // Ellipse
-                        >
-                            <motion.div
-                                className="planet-dot"
-                                animate={{ offsetDistance: ["0%", "100%"] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                                style={{ offsetPath: `path("M 100 0 A 100 70 0 1 1 100 140 A 100 70 0 1 1 100 0")` }} // Simplified path animation mock (requires offset-path support or different technique, falling back to rotation for now)
-                            />
-                        </motion.div>
-                        {/* Fallback animation for simple rotation if offset-path tricky in standard React without polyfills mostly worked now but let's use standard rotation for stability */}
-                        <motion.div
+                        {/* Static Ellipse Path */}
+                        <div
                             style={{
-                                width: '250px', height: '250px',
+                                width: '260px',
+                                height: '160px',
                                 border: '1px dashed rgba(255,255,255,0.3)',
                                 borderRadius: '50%',
                                 position: 'absolute'
                             }}
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                        >
-                            <div style={{ width: '15px', height: '15px', background: 'cyan', borderRadius: '50%', position: 'absolute', top: '-7.5px', left: '50%', transform: 'translateX(-50%)' }}></div>
-                        </motion.div>
+                        ></div>
+
+                        {/* Animated Planet on Elliptical Path */}
+                        <motion.div
+                            className="planet-dot"
+                            style={{
+                                top: '50%',
+                                left: '50%',
+                                marginTop: '-7.5px', // Half of height (15px)
+                                marginLeft: '-7.5px', // Half of width (15px)
+                            }}
+                            animate={{
+                                x: Array.from({ length: 61 }, (_, i) => {
+                                    const angle = (i / 60) * 2 * Math.PI;
+                                    return Math.cos(angle) * 130; // Radius X = 130 (Width 260/2)
+                                }),
+                                y: Array.from({ length: 61 }, (_, i) => {
+                                    const angle = (i / 60) * 2 * Math.PI;
+                                    return Math.sin(angle) * 80;  // Radius Y = 80 (Height 160/2)
+                                })
+                            }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                        />
+
                     </div>
                 </GlassCard>
 
