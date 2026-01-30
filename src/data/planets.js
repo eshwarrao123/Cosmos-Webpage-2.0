@@ -2,7 +2,7 @@ export const planetsData = [
     {
         id: "sun",
         name: "The Sun",
-        image: "/planets/sun.jpg",
+        image: "/planets/sun.webp",
         description: "The star at the center of our Solar System.",
         color: "linear-gradient(45deg, #f1c40f, #e67e22)",
         color3D: "#f1c40f",
@@ -38,7 +38,7 @@ export const planetsData = [
     {
         id: "mercury",
         name: "Mercury",
-        image: "/planets/mercury.jpg",
+        image: "/planets/mercury.webp",
         description: "The smallest planet in our solar system and closest to the Sun.",
         color: "linear-gradient(45deg, #a5a5a5, #5e5e5e)",
         color3D: "#a5a5a5",
@@ -74,7 +74,7 @@ export const planetsData = [
     {
         id: "venus",
         name: "Venus",
-        image: "/planets/venus.jpg",
+        image: "/planets/venus.webp",
         description: "Spinning in the opposite direction to most planets, Venus is the hottest planet.",
         color: "linear-gradient(45deg, #e6c17a, #c28b26)",
         color3D: "#e6c17a",
@@ -110,7 +110,7 @@ export const planetsData = [
     {
         id: "earth",
         name: "Earth",
-        image: "/planets/earth.jpg",
+        image: "/planets/earth.webp",
         description: "Our home planet, the only place we know of so far that’s inhabited by living things.",
         color: "linear-gradient(45deg, #4facfe, #00f2fe)",
         color3D: "#2e86de",
@@ -146,7 +146,7 @@ export const planetsData = [
     {
         id: "moon",
         name: "Earth's Moon",
-        image: "/planets/moon.jpg",
+        image: "/planets/moon.webp",
         description: "Earth's only natural satellite, formed about 4.5 billion years ago.",
         color: "linear-gradient(45deg, #e6e6e6, #9ca3af)",
         color3D: "#d1d5db",
@@ -182,7 +182,7 @@ export const planetsData = [
     {
         id: "mars",
         name: "Mars",
-        image: "/planets/mars.jpg",
+        image: "/planets/mars.webp",
         description: "A dusty, cold, desert world with a very thin atmosphere.",
         color: "linear-gradient(45deg, #ff6b6b, #c0392b)",
         color3D: "#e74c3c",
@@ -218,7 +218,7 @@ export const planetsData = [
     {
         id: "jupiter",
         name: "Jupiter",
-        image: "/planets/jupiter.jpg",
+        image: "/planets/jupiter.webp",
         description: "More than twice as massive as all the other planets combined.",
         color: "linear-gradient(45deg, #d4a373, #9d6b53)",
         color3D: "#d4a373",
@@ -255,7 +255,7 @@ export const planetsData = [
     {
         id: "saturn",
         name: "Saturn",
-        image: "/planets/saturn.jpg",
+        image: "/planets/saturn.png",
         description: "Adorned with a dazzling, complex system of icy rings.",
         color: "linear-gradient(45deg, #ead18d, #cfa855)",
         color3D: "#f1c40f",
@@ -292,7 +292,7 @@ export const planetsData = [
     {
         id: "uranus",
         name: "Uranus",
-        image: "/planets/uranus.jpg",
+        image: "/planets/uranus.webp",
         description: "It rotates at a nearly 90-degree angle from the plane of its orbit.",
         color: "linear-gradient(45deg, #a8dadc, #457b9d)",
         color3D: "#74b9ff",
@@ -329,7 +329,7 @@ export const planetsData = [
     {
         id: "neptune",
         name: "Neptune",
-        image: "/planets/neptune.jpg",
+        image: "/planets/neptune.webp",
         description: "The first planet located through mathematical calculations rather than by telescope.",
         color: "linear-gradient(45deg, #4361ee, #3f37c9)",
         color3D: "#0984e3",

@@ -20,7 +20,7 @@ const StarsGalaxies = () => {
                 <GlassCard className="galaxy-card">
                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
                         <motion.img
-                            src="/milkyway.png"
+                            src="/milkyway.webp"
                             alt="The Milky Way"
                             animate={{ rotate: 360 }}
                             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}

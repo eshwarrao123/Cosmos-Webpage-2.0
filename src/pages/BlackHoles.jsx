@@ -31,7 +31,7 @@ const BlackHoles = () => {
 
                 {/* Static Black Hole Image */}
                 <img
-                    src="/blackhole.png"
+                    src="/blackhole.webp"
                     alt="Black Hole"
                     style={{
                         width: '100%',
