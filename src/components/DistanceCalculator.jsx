@@ -19,13 +19,9 @@ const DistanceCalculator = () => {
     const [toPlanetId, setToPlanetId] = useState('mars');
     const [selectedSpeed, setSelectedSpeed] = useState(SPEEDS[0].value);
 
-    // Get planet objects
     const fromPlanet = planetsData.find(p => p.id === fromPlanetId);
     const toPlanet = planetsData.find(p => p.id === toPlanetId);
 
-    // Calculate generic distance based on semi-major axis diff
-    // Note: This is a simplification (Minimum Intercept Distance approx).
-    // Real distance varies significantly.
     const calculations = useMemo(() => {
         if (!fromPlanet || !toPlanet) return null;
 
