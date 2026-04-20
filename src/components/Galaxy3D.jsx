@@ -7,25 +7,24 @@ const ParticleGalaxy = () => {
 
     // Generate Galaxy Particles
     const particles = useMemo(() => {
-        const count = 15000; // Increased density
+        const count = 15000; 
         const positions = new Float32Array(count * 3);
         const colors = new Float32Array(count * 3);
         const sizes = new Float32Array(count);
 
-        // Reference Colors from image
-        const colorCore = new THREE.Color("#ffeedd"); // Bright warm core
-        const colorInner = new THREE.Color("#ff85a1"); // Pink/Magenta
-        const colorMiddle = new THREE.Color("#9d4edd"); // Purple
-        const colorOuter = new THREE.Color("#3a0ca3"); // Deep Blue
+       
+        const colorCore = new THREE.Color("#ffeedd");
+        const colorInner = new THREE.Color("#ff85a1"); 
+        const colorMiddle = new THREE.Color("#9d4edd"); 
+        const colorOuter = new THREE.Color("#3a0ca3"); 
 
         for (let i = 0; i < count; i++) {
-            // Spiral geometry
             const radius = Math.random() * 8 + 0.5;
             const spinAngle = radius * 0.8;
             const branches = 3;
             const branchAngle = (i % branches) * ((2 * Math.PI) / branches);
 
-            // Randomness factor (higher = more scattered/nebula-like)
+            
             const randomX = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * (0.5 + radius * 0.1);
             const randomY = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * (0.5 + radius * 0.1);
             const randomZ = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * (0.5 + radius * 0.1);
@@ -81,9 +80,7 @@ const ParticleGalaxy = () => {
                     array={particles.colors}
                     itemSize={3}
                 />
-                {/* Note: Standard pointsMaterial doesn't support per-vertex sizes easily without a custom shader, 
-                     so we rely on attenuation and randomness in position density for texture. 
-                     We stick to standard material for compatibility/simplicity. */}
+                {}
             </bufferGeometry>
             <pointsMaterial
                 size={0.08}
@@ -110,7 +107,7 @@ const Galaxy3D = () => {
             pointerEvents: 'none',
             background: 'radial-gradient(circle at center, #0f0518 0%, #000000 100%)' // Darker purple-black BG
         }}>
-            {/* Tilted camera view to match reference image perspective */}
+            
             <Canvas camera={{ position: [0, 6, 8], fov: 55 }}>
                 <ambientLight intensity={0.5} />
                 <ParticleGalaxy />
